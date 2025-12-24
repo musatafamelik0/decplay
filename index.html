@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.2">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!doctype html&gt;</p>
+<p class="p1">&lt;html lang="tr"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="utf-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width,initial-scale=1" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Aralık PS5 Oyun Rehberi • PS5 / Slim / Pro&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="description" content="Aralık ayında PS5, PS5 Slim ve PS5 Pro için oynanacak oyun listeleri. Gamer temalı, filtreli, hızlı." /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="stylesheet" href="./styles.css" /&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;canvas id="snow" aria-hidden="true"&gt;&lt;/canvas&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;header class="top"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="wrap top__inner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a class="brand" href="#" aria-label="Ana sayfa"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="brand__dot"&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="brand__text"&gt;DEC&lt;span class="brand__thin"&gt;PLAY&lt;/span&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/a&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;nav class="nav"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="nav__btn is-active" data-route="home"&gt;Anasayfa&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="nav__btn" data-route="lists"&gt;Listeler&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="nav__btn" data-route="picks"&gt;Editör Seçkisi&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="nav__btn" data-route="about"&gt;Hakkında&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="top__right"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="pill"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="pill__spark"&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span id="monthLabel"&gt;ARALIK&lt;/span&gt; • &lt;span id="yearLabel"&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;main class="wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- HERO --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="hero" data-view="home"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="hero__bgGlow"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="hero__grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hero__left"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="kicker"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="kicker__badge"&gt;🎄 Yılbaşı Özel&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="kicker__text"&gt;Aralık’ta PS5’te ne oynanır?&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h1 class="h1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>PS5 / Slim / Pro için</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="h1__accent"&gt;Aralık Oyun Listeleri&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/h1&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="sub"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Hızlı seçim yap: tür filtresi, arama, cihaz bazlı listeler ve “bu gece oynanır” önerileri.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Görsel şov var ama gereksiz süs yok: temiz, hızlı, gamer.</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="hero__cta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="btn btn--primary" data-goto="lists"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Listelere Git &lt;span class="btn__arrow"&gt;→&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="btn btn--ghost" data-goto="picks"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Editör Seçkisi</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="stats"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="stat"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="stat__num" id="countAll"&gt;—&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="stat__label"&gt;Toplam Oyun&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="stat"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="stat__num"&gt;3&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="stat__label"&gt;Cihaz Listesi&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="stat"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="stat__num"&gt;⚡&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="stat__label"&gt;Hızlı Filtre&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hero__right"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="deviceCard"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="deviceCard__top"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="deviceCard__title"&gt;Cihaz Modu&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="seg" role="tablist" aria-label="Cihaz seçimi"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="seg__btn is-active" data-device="ps5" role="tab"&gt;PS5&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="seg__btn" data-device="slim" role="tab"&gt;PS5 Slim&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="seg__btn" data-device="pro" role="tab"&gt;PS5 Pro&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="deviceCard__body"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="deviceMeta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="chip" id="deviceChip"&gt;PS5&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="deviceMeta__desc" id="deviceDesc"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>Dengeli liste: herkesin oynayabileceği tür çeşitliliği.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="miniGrid" id="miniHighlights"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- JS ile dolacak --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="deviceCard__footer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="btn btn--primary btn--small" data-goto="lists"&gt;Bu cihaz listesi&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="hint"&gt;Tip: Arama + tür filtresi ile 10 sn’de seçim.&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="banner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="banner__left"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="banner__title"&gt;🎁 “Yılbaşı Gecesi” Modu&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="banner__text"&gt;Co-op / party / kısa oturum oyunlarını öne çıkar.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="btn btn--ghost btn--small" id="toggleNY"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Modu Aç/Kapat</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- LISTS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="panel" data-view="lists" hidden&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="panel__head"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="h2"&gt;Listeler&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="panel__sub"&gt;Cihaz seç, ara, tür filtrele. Kartlara tıklayınca detay açılır.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="controls"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="tabs" role="tablist" aria-label="Cihaz listesi"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="tab is-active" data-list="ps5" role="tab"&gt;PS5&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="tab" data-list="slim" role="tab"&gt;PS5 Slim&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="tab" data-list="pro" role="tab"&gt;PS5 Pro&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="filters"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="q"&gt;Ara&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input id="q" type="search" placeholder="Oyun adı, tür, etiket…" autocomplete="off" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="genre"&gt;Tür&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;select id="genre"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="all"&gt;Hepsi&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="action"&gt;Aksiyon&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="rpg"&gt;RPG&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="racing"&gt;Yarış&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="sports"&gt;Spor&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="horror"&gt;Korku&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="co-op"&gt;Co-op / Party&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="indie"&gt;Indie&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="sort"&gt;Sırala&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;select id="sort"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="score"&gt;Skor (yüksek → düşük)&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="session"&gt;Oturum Süresi (kısa → uzun)&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;option value="name"&gt;İsim (A → Z)&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="grid" id="cards"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- PICKS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="panel" data-view="picks" hidden&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="panel__head"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="h2"&gt;Editör Seçkisi&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="panel__sub"&gt;“Bu ay kesin oynanır” listesi. Daha az, daha nokta atışı.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="picks" id="picks"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- ABOUT --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="panel" data-view="about" hidden&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="panel__head"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="h2"&gt;Hakkında&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="panel__sub"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Bu site bir şablon: oyunları sen güncellersin. Hızlı çalışır, mobil uyumlu, animasyonları abartmaz.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="about"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="about__card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3 class="h3"&gt;Nasıl düzenlerim?&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;code&gt;app.js&lt;/code&gt; içindeki &lt;code&gt;DATA&lt;/code&gt; listesinden oyunları ekle/çıkar.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>İstersen “PS Plus” / “Yeni çıkanlar” gibi etiketler de ekleyebilirsin.</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="about__card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3 class="h3"&gt;Tema / renk&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;code&gt;styles.css&lt;/code&gt; en üstteki &lt;code&gt;:root&lt;/code&gt; değişkenlerinden renkleri değiştir.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Yılbaşı modunda arka plan daha sıcak bir tona kayar.</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="about__card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3 class="h3"&gt;Performans&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Kar efekti canvas ile hafif. İstersen kapat: &lt;code&gt;snow&lt;/code&gt; fonksiyonunu devre dışı bırak.</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- MODAL --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;dialog class="modal" id="modal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="modal__card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="modal__x" id="modalClose" aria-label="Kapat"&gt;✕&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="modal__meta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="modal__title" id="mTitle"&gt;—&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="modal__tags" id="mTags"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="modal__grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="kv"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="kv__k"&gt;Tür&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="kv__v" id="mGenre"&gt;—&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="kv"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="kv__k"&gt;Oturum&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="kv__v" id="mSession"&gt;—&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="kv"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="kv__k"&gt;Zorluk&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="kv__v" id="mDifficulty"&gt;—&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="kv"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="kv__k"&gt;Skor&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="kv__v" id="mScore"&gt;—&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="modal__desc" id="mDesc"&gt;—&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="modal__actions"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="btn btn--primary btn--small" id="mPrimary"&gt;Listeye Dön&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="btn btn--ghost btn--small" id="mSecondary"&gt;Kapat&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/dialog&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer class="foot"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="foot__left"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="foot__mono"&gt;DECPLAY&lt;/span&gt; • Aralık Oyun Rehberi</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="foot__right"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="foot__tiny"&gt;Made for gamers • minimal ama havalı&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script src="./app.js"&gt;&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>

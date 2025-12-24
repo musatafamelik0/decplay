@@ -1,0 +1,348 @@
+{\rtf1\ansi\ansicpg1254\cocoartf2867
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 // DECPLAY \'97 Aral\uc0\u305 k PS5 Oyun Rehberi\
+// Not: Oyun listeleri \'f6rnektir. Sen DATA i\'e7ine istedi\uc0\u287 in oyunlar\u305  ekleyip g\'fcncelleyebilirsin.\
+\
+const YEAR = new Date().getFullYear();\
+document.getElementById("yearLabel").textContent = YEAR;\
+\
+const DEVICE_INFO = \{\
+  ps5: \{\
+    name: "PS5",\
+    desc: "Dengeli liste: herkesin oynayabilece\uc0\u287 i t\'fcr \'e7e\u351 itlili\u287 i."\
+  \},\
+  slim: \{\
+    name: "PS5 Slim",\
+    desc: "Daha k\uc0\u305 sa oturum + h\u305 zl\u305  aksiyon a\u287 \u305 rl\u305 kl\u305  se\'e7ki."\
+  \},\
+  pro: \{\
+    name: "PS5 Pro",\
+    desc: "G\'f6rsel \uc0\u351 ov + b\'fcy\'fck yap\u305 mlar + performans canavarlar\u305 ."\
+  \}\
+\};\
+\
+// T\'fcr map (UI metinleri)\
+const GENRE_LABEL = \{\
+  action: "Aksiyon",\
+  rpg: "RPG",\
+  racing: "Yar\uc0\u305 \u351 ",\
+  sports: "Spor",\
+  horror: "Korku",\
+  "co-op": "Co-op / Party",\
+  indie: "Indie"\
+\};\
+\
+// Oturum s\'fcre etiketi (s\uc0\u305 ralama i\'e7in dakika)\
+const SESSION_MIN = \{ short: 35, mid: 75, long: 140 \};\
+const SESSION_LABEL = \{ short: "K\uc0\u305 sa", mid: "Orta", long: "Uzun" \};\
+\
+// \'d6rnek veri (sen bunu d\'fczenle)\
+const DATA = \{\
+  ps5: [\
+    game("Ghost of Tsushima Director\'92s Cut", "action", "mid", "Orta", 92, ["hikaye", "open-world"]),\
+    game("It Takes Two", "co-op", "mid", "Kolay", 90, ["co-op", "y\uc0\u305 lba\u351 \u305 "]),\
+    game("EA SPORTS FC", "sports", "short", "Kolay", 84, ["h\uc0\u305 zl\u305 ", "arkada\u351 larla"]),\
+    game("Returnal", "action", "mid", "Zor", 88, ["roguelike", "adrenalin"]),\
+    game("Resident Evil 4", "horror", "mid", "Orta", 91, ["gerilim", "klasik"]),\
+    game("Gran Turismo 7", "racing", "mid", "Orta", 87, ["sim", "direksiyon"]),\
+    game("Hades", "indie", "short", "Orta", 93, ["ak\uc0\u305 c\u305 ", "ba\u287 \u305 ml\u305 l\u305 k"]),\
+    game("Baldur\'92s Gate 3", "rpg", "long", "Orta", 96, ["dev", "hikaye"])\
+  ],\
+  slim: [\
+    game("Spider-Man: Miles Morales", "action", "short", "Kolay", 85, ["h\uc0\u305 zl\u305 ", "ak\u305 c\u305 "]),\
+    game("Rocket League", "sports", "short", "Orta", 86, ["party", "rekabet"]),\
+    game("Overcooked! All You Can Eat", "co-op", "short", "Orta", 88, ["y\uc0\u305 lba\u351 \u305 ", "kahkaha"]),\
+    game("Stray", "indie", "mid", "Kolay", 83, ["rahat", "atmosfer"]),\
+    game("Call of Duty: Warzone", "action", "short", "Zor", 82, ["online", "squad"]),\
+    game("Hotline Miami", "indie", "short", "Zor", 89, ["h\uc0\u305 z", "retro"]),\
+    game("Need for Speed Unbound", "racing", "mid", "Orta", 80, ["stil", "h\uc0\u305 z"])\
+  ],\
+  pro: [\
+    game("Cyberpunk 2077", "rpg", "long", "Orta", 90, ["g\'f6rsel", "pro"]),\
+    game("Alan Wake 2", "horror", "mid", "Orta", 89, ["sinematik", "gizem"]),\
+    game("Horizon Forbidden West", "action", "long", "Orta", 88, ["open-world", "g\'f6rsel"]),\
+    game("Demon\'92s Souls", "action", "mid", "Zor", 92, ["pro", "challenging"]),\
+    game("Final Fantasy VII Rebirth", "rpg", "long", "Orta", 93, ["epik", "JRPG"]),\
+    game("The Last of Us Part I", "action", "mid", "Orta", 91, ["hikaye", "duygu"]),\
+    game("Gran Turismo 7", "racing", "mid", "Orta", 87, ["performans", "netlik"])\
+  ]\
+\};\
+\
+function game(name, genre, session, difficulty, score, tags = []) \{\
+  return \{ id: cryptoId(), name, genre, session, difficulty, score, tags,\
+    desc: buildDesc(name, genre, session, difficulty)\
+  \};\
+\}\
+\
+function buildDesc(name, genre, session, difficulty)\{\
+  const g = GENRE_LABEL[genre] || "Oyun";\
+  return `$\{name\} i\'e7in k\uc0\u305 sa \'f6zet: T\'fcr\'fc $\{g\}. Oturum: $\{SESSION_LABEL[session] || "\'97"\}. Zorluk: $\{difficulty\}. Aral\u305 k moduna uygun \'93otur-oyna\'94 hissi.`;\
+\}\
+\
+function cryptoId()\{\
+  return Math.random().toString(16).slice(2) + Date.now().toString(16).slice(4);\
+\}\
+\
+/* ---------- ROUTER (sayfa gibi) ---------- */\
+const navBtns = document.querySelectorAll(".nav__btn");\
+const views = document.querySelectorAll("[data-view]");\
+\
+function showView(route)\{\
+  navBtns.forEach(b => b.classList.toggle("is-active", b.dataset.route === route));\
+  views.forEach(v => \{\
+    const is = v.dataset.view === route;\
+    v.hidden = !is;\
+  \});\
+  // scroll top of main content\
+  window.scrollTo(\{ top: 0, behavior: "smooth" \});\
+\}\
+\
+navBtns.forEach(btn => btn.addEventListener("click", () => showView(btn.dataset.route)));\
+\
+// hero CTA\
+document.querySelectorAll("[data-goto]").forEach(el => \{\
+  el.addEventListener("click", () => \{\
+    const route = el.dataset.goto;\
+    showView(route);\
+    if(route === "lists") cardsRender();\
+    if(route === "picks") picksRender();\
+  \});\
+\});\
+\
+/* ---------- DEVICE SEGMENT (hero) ---------- */\
+const segBtns = document.querySelectorAll(".seg__btn");\
+let heroDevice = "ps5";\
+const deviceChip = document.getElementById("deviceChip");\
+const deviceDesc = document.getElementById("deviceDesc");\
+const miniHighlights = document.getElementById("miniHighlights");\
+\
+segBtns.forEach(b => b.addEventListener("click", () => \{\
+  heroDevice = b.dataset.device;\
+  segBtns.forEach(x => x.classList.toggle("is-active", x === b));\
+  deviceChip.textContent = DEVICE_INFO[heroDevice].name;\
+  deviceDesc.textContent = DEVICE_INFO[heroDevice].desc;\
+  renderMini();\
+\}));\
+\
+function renderMini()\{\
+  const list = DATA[heroDevice].slice().sort((a,b)=>b.score-a.score).slice(0,4);\
+  miniHighlights.innerHTML = list.map(g => `\
+    <div class="mini">\
+      <div class="mini__t">$\{escapeHTML(g.name)\}</div>\
+      <div class="mini__s">$\{GENRE_LABEL[g.genre]\} \'95 Skor $\{g.score\}</div>\
+    </div>\
+  `).join("");\
+\}\
+renderMini();\
+\
+/* ---------- LISTS PAGE ---------- */\
+const tabs = document.querySelectorAll(".tab");\
+const cardsEl = document.getElementById("cards");\
+const qEl = document.getElementById("q");\
+const genreEl = document.getElementById("genre");\
+const sortEl = document.getElementById("sort");\
+\
+let activeList = "ps5";\
+\
+tabs.forEach(t => t.addEventListener("click", () => \{\
+  activeList = t.dataset.list;\
+  tabs.forEach(x => x.classList.toggle("is-active", x === t));\
+  cardsRender();\
+\}));\
+\
+[qEl, genreEl, sortEl].forEach(el => el.addEventListener("input", cardsRender));\
+\
+function cardsRender()\{\
+  const q = (qEl.value || "").trim().toLowerCase();\
+  const genre = genreEl.value;\
+  const sort = sortEl.value;\
+\
+  let list = DATA[activeList].slice();\
+\
+  // filter\
+  if(genre !== "all")\{\
+    list = list.filter(g => g.genre === genre);\
+  \}\
+  if(q)\{\
+    list = list.filter(g => \{\
+      const hay = `$\{g.name\} $\{g.genre\} $\{(g.tags||[]).join(" ")\} $\{g.difficulty\}`.toLowerCase();\
+      return hay.includes(q);\
+    \});\
+  \}\
+\
+  // sort\
+  if(sort === "score") list.sort((a,b)=>b.score-a.score);\
+  if(sort === "session") list.sort((a,b)=>SESSION_MIN[a.session]-SESSION_MIN[b.session]);\
+  if(sort === "name") list.sort((a,b)=>a.name.localeCompare(b.name, "tr"));\
+\
+  cardsEl.innerHTML = list.map(g => cardHTML(g)).join("");\
+\
+  // click handlers\
+  cardsEl.querySelectorAll(".card").forEach(el => \{\
+    el.addEventListener("click", () => openModal(el.dataset.id));\
+  \});\
+\}\
+\
+function cardHTML(g)\{\
+  const hot = g.tags?.includes("y\uc0\u305 lba\u351 \u305 ");\
+  const coop = g.genre === "co-op";\
+  return `\
+    <article class="card" data-id="$\{g.id\}">\
+      <div class="card__top">\
+        <h3 class="card__title">$\{escapeHTML(g.name)\}</h3>\
+        <span class="badge">$\{g.score\}</span>\
+      </div>\
+\
+      <div class="card__meta">\
+        <span class="tag $\{hot ? "tag--hot" : ""\}">$\{GENRE_LABEL[g.genre]\}</span>\
+        <span class="tag">$\{SESSION_LABEL[g.session]\} Oturum</span>\
+        <span class="tag $\{coop ? "tag--good" : ""\}">$\{g.difficulty\}</span>\
+        $\{(g.tags||[]).slice(0,2).map(t => `<span class="tag">$\{escapeHTML(t)\}</span>`).join("")\}\
+      </div>\
+\
+      <p class="card__desc">$\{escapeHTML(g.desc)\}</p>\
+    </article>\
+  `;\
+\}\
+\
+/* ---------- PICKS PAGE ---------- */\
+const picksEl = document.getElementById("picks");\
+function picksRender()\{\
+  const picks = [\
+    pick("Y\uc0\u305 lba\u351 \u305  gecesi co-op", "It Takes Two \'95 Overcooked \'95 Rocket League gibi k\u305 sa/orta oturum oyunlar\u305 yla ekip kur."),\
+    pick("G\'f6rsel \uc0\u351 ov isteyenlere", "Horizon \'95 Cyberpunk \'95 Alan Wake 2 tarz\u305  sinematik i\u351 leri PS5 Pro listesine yasla."),\
+    pick("H\uc0\u305 zl\u305  rekabet modu", "FC / Warzone / Rocket League: 20\'9640 dakikal\u305 k oturumlarda tam verim."),\
+    pick("Tek ki\uc0\u351 ilik hik\'e2ye", "Ghost of Tsushima \'95 The Last of Us \'95 RE4: \'91bir b\'f6l\'fcm daha\'92 tuza\u287 \u305  garantili.")\
+  ];\
+  picksEl.innerHTML = picks.map(p => `\
+    <div class="pick">\
+      <h3 class="pick__title">$\{escapeHTML(p.t)\}</h3>\
+      <p class="pick__text">$\{escapeHTML(p.d)\}</p>\
+    </div>\
+  `).join("");\
+\}\
+function pick(t,d)\{ return \{t,d\}; \}\
+\
+/* ---------- MODAL ---------- */\
+const modal = document.getElementById("modal");\
+const modalClose = document.getElementById("modalClose");\
+const mTitle = document.getElementById("mTitle");\
+const mTags = document.getElementById("mTags");\
+const mGenre = document.getElementById("mGenre");\
+const mSession = document.getElementById("mSession");\
+const mDifficulty = document.getElementById("mDifficulty");\
+const mScore = document.getElementById("mScore");\
+const mDesc = document.getElementById("mDesc");\
+const mPrimary = document.getElementById("mPrimary");\
+const mSecondary = document.getElementById("mSecondary");\
+\
+function openModal(id)\{\
+  const all = [...DATA.ps5, ...DATA.slim, ...DATA.pro];\
+  const g = all.find(x => x.id === id);\
+  if(!g) return;\
+\
+  mTitle.textContent = g.name;\
+  mGenre.textContent = GENRE_LABEL[g.genre] || "\'97";\
+  mSession.textContent = SESSION_LABEL[g.session] || "\'97";\
+  mDifficulty.textContent = g.difficulty || "\'97";\
+  mScore.textContent = g.score ?? "\'97";\
+  mDesc.textContent = g.desc || "\'97";\
+  mTags.innerHTML = (g.tags||[]).map(t => `<span class="tag">$\{escapeHTML(t)\}</span>`).join("");\
+\
+  modal.showModal();\
+\}\
+function closeModal()\{ modal.close(); \}\
+modalClose.addEventListener("click", closeModal);\
+mSecondary.addEventListener("click", closeModal);\
+mPrimary.addEventListener("click", () => \{\
+  closeModal();\
+  showView("lists");\
+  cardsRender();\
+\});\
+modal.addEventListener("click", (e) => \{\
+  const rect = modal.querySelector(".modal__card").getBoundingClientRect();\
+  const inCard = e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom;\
+  if(!inCard) closeModal();\
+\});\
+\
+/* ---------- Year-end Mode ---------- */\
+const toggleNY = document.getElementById("toggleNY");\
+toggleNY.addEventListener("click", () => \{\
+  document.body.classList.toggle("is-ny");\
+\});\
+\
+/* ---------- Count ---------- */\
+document.getElementById("countAll").textContent =\
+  (DATA.ps5.length + DATA.slim.length + DATA.pro.length).toString();\
+\
+/* ---------- Make sure lists render when entering lists view ---------- */\
+function onFirstLoad()\{\
+  showView("home");\
+  cardsRender();\
+  picksRender();\
+\}\
+onFirstLoad();\
+\
+/* ---------- Snow Canvas (lightweight) ---------- */\
+snowInit();\
+\
+function snowInit()\{\
+  const c = document.getElementById("snow");\
+  const ctx = c.getContext("2d");\
+  let w, h, raf;\
+  const flakes = [];\
+  const FLAKE_COUNT = 110;\
+\
+  function resize()\{\
+    w = c.width = window.innerWidth * devicePixelRatio;\
+    h = c.height = window.innerHeight * devicePixelRatio;\
+    c.style.width = window.innerWidth + "px";\
+    c.style.height = window.innerHeight + "px";\
+  \}\
+  window.addEventListener("resize", resize);\
+  resize();\
+\
+  for(let i=0;i<FLAKE_COUNT;i++)\{\
+    flakes.push(\{\
+      x: Math.random()*w,\
+      y: Math.random()*h,\
+      r: (Math.random()*2.2 + .6) * devicePixelRatio,\
+      s: (Math.random()*0.9 + 0.35) * devicePixelRatio,\
+      a: Math.random()*Math.PI*2\
+    \});\
+  \}\
+\
+  function tick()\{\
+    ctx.clearRect(0,0,w,h);\
+    ctx.globalAlpha = 0.75;\
+    for(const f of flakes)\{\
+      f.a += 0.01;\
+      f.y += f.s;\
+      f.x += Math.sin(f.a) * 0.35 * devicePixelRatio;\
+\
+      if(f.y > h + 10) \{ f.y = -10; f.x = Math.random()*w; \}\
+\
+      ctx.beginPath();\
+      ctx.arc(f.x, f.y, f.r, 0, Math.PI*2);\
+      ctx.fillStyle = "rgba(255,255,255,0.85)";\
+      ctx.fill();\
+    \}\
+    raf = requestAnimationFrame(tick);\
+  \}\
+  tick();\
+\}\
+\
+/* ---------- Utils ---------- */\
+function escapeHTML(str)\{\
+  return String(str)\
+    .replaceAll("&","&amp;")\
+    .replaceAll("<","&lt;")\
+    .replaceAll(">","&gt;")\
+    .replaceAll('"',"&quot;")\
+    .replaceAll("'","&#039;");\
+\}}
